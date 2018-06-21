@@ -27,10 +27,13 @@ class ViewController: UIViewController {
         let sun = SCNNode(geometry: SCNSphere(radius: 0.35))
         let earthParent = SCNNode()
         let venusParent = SCNNode()
+        let moonParent = SCNNode()
+        
         sun.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "Sun Diffuse")
         sun.position = SCNVector3(0, 0, -1)
         earthParent.position = SCNVector3(0, 0, -1)
         venusParent.position = SCNVector3(0, 0, -1)
+        moonParent.position = SCNVector3(1.2, 0, 0)
         
         self.sceneView.scene.rootNode.addChildNode(sun)
         self.sceneView.scene.rootNode.addChildNode(earthParent)
@@ -47,21 +50,23 @@ class ViewController: UIViewController {
         let earthParentRotation = Rotation(time: 14)
         let venusParentRotation = Rotation(time: 10)
         let earthRotation = Rotation(time: 8)
+        let moonRotation = Rotation(time: 5)
         let venusRotation = Rotation(time: 8)
         
         
         earth.runAction(earthRotation)
         venus.runAction(venusRotation)
-        
-        
         earthParent.runAction(earthParentRotation)
         venusParent.runAction(venusParentRotation)
+        moonParent.runAction(moonRotation)
         
         
         sun.runAction(sunAction)
         earthParent.addChildNode(earth)
+        earthParent.addChildNode(moonParent)
         venusParent.addChildNode(venus)
         earth.addChildNode(moon)
+        moonParent.addChildNode(moon)
     }
     
     func Rotation(time: TimeInterval) -> SCNAction {
