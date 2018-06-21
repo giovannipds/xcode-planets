@@ -40,7 +40,6 @@ class ViewController: UIViewController {
         let earth = planet(geometry: SCNSphere(radius: 0.2), diffuse: #imageLiteral(resourceName: "Earth Day"), specular: #imageLiteral(resourceName: "Earth Specular"), emission: #imageLiteral(resourceName: "Earth Clouds"), normal: #imageLiteral(resourceName: "Earth Textures"), position: SCNVector3(1.2, 0, 0))
         let venus = planet(geometry: SCNSphere(radius: 0.1), diffuse: #imageLiteral(resourceName: "Venus Surface"), specular: #imageLiteral(resourceName: "Venus Surface"), emission: nil, normal: nil, position: SCNVector3(0.7, 0, 0))
         let moon = planet(geometry: SCNSphere(radius: 0.05), diffuse: #imageLiteral(resourceName: "moon Diffuse"), specular: nil, emission: nil, normal: nil, position: SCNVector3(0, 0, -0.3))
-        let venusMoon = planet(geometry: SCNSphere(radius: 0.05), diffuse: #imageLiteral(resourceName: "moon Diffuse"), specular: nil, emission: nil, normal: nil, position: SCNVector3(0, 0, -0.3))
         
         
         
@@ -63,7 +62,6 @@ class ViewController: UIViewController {
         earthParent.addChildNode(earth)
         venusParent.addChildNode(venus)
         earth.addChildNode(moon)
-        venus.addChildNode(venusMoon)
     }
     
     func Rotation(time: TimeInterval) -> SCNAction {
