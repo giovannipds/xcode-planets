@@ -30,9 +30,9 @@ class ViewController: UIViewController {
         let moonParent = SCNNode()
         
         sun.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "Sun Diffuse")
-        sun.position = SCNVector3(0, 0, -1)
-        earthParent.position = SCNVector3(0, 0, -1)
-        venusParent.position = SCNVector3(0, 0, -1)
+        sun.position = SCNVector3(0, 0, -1.66)
+        earthParent.position = SCNVector3(0, 0, -1.66)
+        venusParent.position = SCNVector3(0, 0, -1.66)
         moonParent.position = SCNVector3(1.2, 0, 0)
         
         self.sceneView.scene.rootNode.addChildNode(sun)
